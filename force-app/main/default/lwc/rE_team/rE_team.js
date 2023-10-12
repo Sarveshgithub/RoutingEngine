@@ -1,3 +1,3 @@
 import { LightningElement } from 'lwc';
 
-export default class RE_team extends LightningElement {}
+export default class Re_team extends LightningElement {}
