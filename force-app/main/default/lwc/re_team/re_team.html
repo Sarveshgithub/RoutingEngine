@@ -1,3 +1,24 @@
 <template>
-    
+    <lightning-card  title="Hello">
+        <lightning-button label="New Team" slot="actions" variant="brand" onclick={handleNewTeam}></lightning-button>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+        <p slot="footer">Card Footer</p>
+
+
+        <lightning-record-form
+    object-api-name={objectApiName}
+    fields={fields}
+    onsuccess={handleSuccess}
+>
+</lightning-record-form>
+
+
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
 </template>
