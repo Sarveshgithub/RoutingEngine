@@ -1,24 +1,36 @@
-import { LightningElement ,api} from 'lwc';
+import { LightningElement ,api, wire} from 'lwc';
+import { NavigationMixin } from "lightning/navigation";
+import fetchTeams from '@salesforce/apex/RE_EngineController.fetchTeams';
 import generateData from './generateData';
 import NAME_FIELD from '@salesforce/schema/Account.Name';
 import REVENUE_FIELD from '@salesforce/schema/Account.AnnualRevenue';
 import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
 
 const columns = [
-    { label: 'Label', fieldName: 'name' },
-    { label: 'Website', fieldName: 'website', type: 'url' },
-    { label: 'Phone', fieldName: 'phone', type: 'phone' },
-    { label: 'Balance', fieldName: 'amount', type: 'currency' },
-    { label: 'CloseAt', fieldName: 'closeAt', type: 'date' },
+    { label: 'Name', fieldName: 'Name' },
+    { label: 'Active', fieldName: 'Active__c', type: 'checkbox' },
+    { label: 'Object', fieldName: 'Object__c' }
 ];
 
-export default class Re_team extends LightningElement {
+export default class Re_team  extends NavigationMixin(LightningElement) {
     data = [];
     columns = columns;
     @api objectApiName ='Account';
 
     fields = [NAME_FIELD, REVENUE_FIELD, INDUSTRY_FIELD];
 
+    @wire(fetchTeams)
+    wiredMyData({ error, data }) {
+        if (data) {
+            console.log('data:::',data)
+            this.data = data;
+        } else if (error) {
+            console.error('Error loading data: ' + JSON.stringify(error));
+        }
+    }
+    get(){
+         console.log('teams:::',this.teams)
+    }
     handleSuccess(event) {
         const evt = new ShowToastEvent({
             title: 'Account created',
@@ -33,6 +45,12 @@ export default class Re_team extends LightningElement {
     }
 
     handleNewTeam(){
-
+        this[NavigationMixin.Navigate]({
+            type: "standard__objectPage",
+            attributes: {
+              objectApiName: "Team__c",
+              actionName: "new",
+            }
+          });
     }
 }
