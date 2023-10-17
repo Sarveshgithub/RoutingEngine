@@ -1,0 +1,124 @@
+<template>
+    <lightning-card>
+ 
+        <h3 class="slds-text-heading_medium"><lightning-icon icon-name="custom:custom21" size="small"></lightning-icon> <strong style="color:#270086; font-size:13px;"> Create Vertical Navigation in Lightning Web Component (LWC) </strong></h3>
+        <br/>
+        <lightning-layout>           
+            <lightning-layout-item>
+                <lightning-vertical-navigation selected-item={selectedItem} onselect={changeHandleAction} class="navigation">
+                    <lightning-vertical-navigation-section label="Vertical Navigation">
+                        <lightning-vertical-navigation-item label="Tutorial" name="tutorial"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Integration" name="integration"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Visualforce" name="visualforce"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Trigger" name="trigger"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Jquery/Javascript" name="jqueryJavascript"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Salesforce LWC" name="salesforceLwc"></lightning-vertical-navigation-item>
+                    </lightning-vertical-navigation-section>
+                </lightning-vertical-navigation>
+            </lightning-layout-item>
+     
+            <lightning-layout-item padding="around-medium">
+                <h2 class="slds-section-title--divider" style="background:#eee; margin-bottom:10px;"><strong>You Are Viewing: <span style="color:#0000ff;">{currentContent}</span></strong></h2>
+     
+                <template if:true={tutorialValue}>                      
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/if-and-else-condition-in-lwc/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2020/08/aboutus.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <h3 class="slds-text-heading_small slds-text-color--error"><strong>Tutorial W3web</strong></h3> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/if-and-else-condition-in-lwc/" target="_blank" rel="noopener noreferrer">Easy to learn step-by-step online Salesforce tutorial from w3web.net</a></b></p>
+                        <p><strong>w3web.net</strong> is the place where you can learn step-by-step about Blog, WordPress, Salesforce Lightning Component, Lightning Web Component (LWC),</p>                     
+                        <p>Visualforce, Technical of Computer Application, Salesforce Plugin, JavaScript, Jquery, CSS, Computer and Accessories, Software Configuration, Customization, Development and much<span class="readMore"><a href="https://www.w3web.net/if-and-else-condition-in-lwc/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+                <template if:true={integrationValue}>
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/create-node-rest-api-to-insert-update-delete-from-soql/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2021/09/nodeApiFeature.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <h3 class="slds-text-heading_small slds-text-color--error"><strong>REST API Integration</strong></h3> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/create-node-rest-api-to-insert-update-delete-from-soql/" target="_blank" rel="noopener noreferrer">How to insert, update, retrieve and Delete Record from Node js Rest Api Using Express JS, pool, pg module and localserver in Salesforce (SOQL).</a></b></p>
+                        <p>Create Node js Rest Api to get, insert, update and delete records from SOQL Using.</p>                     
+                        <p>Today in this post we are going to learn about How to Create Node js Rest Api to get, insert, update and delete records from SOQL Using Express JS, Install pool database, Install pg and Install localserver to Start port terminal and project structure setup.<span class="readMore"><a href="https://www.w3web.net/create-node-rest-api-to-insert-update-delete-from-soql/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+                <template if:true={visualforceValue}>
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/visualforce-page-to-return-data-from-multiple-custom-object/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2021/05/vfpMultipleObjects.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Visualforce Page</strong></h3> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/visualforce-page-to-return-data-from-multiple-custom-object/" target="_blank" rel="noopener noreferrer">How to fetch data from multiple different object in visualforce page.</a></b></p>
+                        <p>Create visualforce page to retrieve data from multiple custom objects using custom controller wrapper class.</p>                     
+                        <p>Today in this post we are going to learn about how to retrieve data from multiple custom objects using custom controller wrapper class and display data in a table of VF page in Salesforce..<span class="readMore"><a href="https://www.w3web.net/visualforce-page-to-return-data-from-multiple-custom-object/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+                <template if:true={triggerValue}>
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/trigger-to-check-duplicate-email-on-lead/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2021/07/duplicateEmailCheckLeadFeature.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/trigger-to-check-duplicate-email-on-lead/" target="_blank" rel="noopener noreferrer">Preventing duplicate records of contact based on multiple fields.</a></b></p>
+                        <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
+                        <p>Today in this post we are going to learn about How to Check Duplicate Email on Lead Object in Salesforce. Write a trigger on lead to prevent duplicate records.<span class="readMore"><a href="https://www.w3web.net/trigger-to-check-duplicate-email-on-lead/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+                <template if:true={jqueryJavascriptValue}>
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/image-gallery-with-a-jorizontal-thumbnail-carousel/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2020/10/imageGallerySliderFeature.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Visualforce Page</strong></h3> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/image-gallery-with-a-jorizontal-thumbnail-carousel/" target="_blank" rel="noopener noreferrer">Create multiple image slider in jquery.</a></b></p>
+                        <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
+                        <p>Today in this post we are going to learn about Create a Custom Image Gallery With a Horizontal Thumbnail Carousel Simply using Custom JQuery Small Function and CSS for Create Image Gallery.<span class="readMore"><a href="https://www.w3web.net/image-gallery-with-a-jorizontal-thumbnail-carousel/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+                <template if:true={salesforceLwcValue}>
+                    <div class="tabContent">                        
+                        <div class="postImage">					
+                            <a href="https://www.w3web.net/lwc-get-customize-custom-metadata-in-apex/" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.w3web.net/wp-content/uploads/2021/09/lwcFetchCustomMetaDataFeature.png" width="300" height="200"></img>
+                            </a>
+                        </div> 
+                        <div class="imgRt"> 
+                        <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce LWC</strong></h3> 
+                        <p class="titleTag"><b><a href="https://www.w3web.net/lwc-get-customize-custom-metadata-in-apex/" target="_blank" rel="noopener noreferrer">how to get custom Metadata in lwc using Apex</a></b></p>
+                        <p>How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class in Salesforce Lightning Web Component — LWC.</p>                     
+                        <p>Today in this post we are going to learn about How to How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class in Salesforce Lightning Web Component — LWC.<span class="readMore"><a href="https://www.w3web.net/lwc-get-customize-custom-metadata-in-apex/" target="_blank" rel="noopener noreferrer"> more →</a></span></p>
+                        </div>    
+                    </div>
+                </template>
+     
+     
+            </lightning-layout-item>
+        </lightning-layout>
+     
+
+    </lightning-card> 
+    </template>

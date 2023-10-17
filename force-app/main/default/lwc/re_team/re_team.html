@@ -1,12 +1,26 @@
 <template>
-    <lightning-card  title="Team">
-        <lightning-button label="New Team" slot="actions" variant="brand" onclick={handleNewTeam}></lightning-button>
-        <div style="height: 300px;">
+    <lightning-button
+        label="switch"
+        variant="brand"
+        onclick={check}
+    ></lightning-button>
+    <template if:false={show}>
+        <c-re_team-detail> </c-re_team-detail>
+    </template>
+    <lightning-card title="Team" if:true={show}>
+        <lightning-button
+            label="New Team"
+            slot="actions"
+            variant="brand"
+            onclick={handleNewTeam}
+        ></lightning-button>
+        <div style="height: 300px">
             <lightning-datatable
-                    key-field="id"
-                    data={data}
-                    columns={columns}
-                    hide-checkbox-column="true">
+                key-field="id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column="true"
+            >
             </lightning-datatable>
         </div>
     </lightning-card>

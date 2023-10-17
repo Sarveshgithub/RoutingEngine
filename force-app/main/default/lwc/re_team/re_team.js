@@ -1,7 +1,6 @@
 import { LightningElement, api, wire } from "lwc";
 import { NavigationMixin } from "lightning/navigation";
 import fetchTeams from "@salesforce/apex/RE_EngineController.fetchTeams";
-import generateData from "./generateData";
 import NAME_FIELD from "@salesforce/schema/Account.Name";
 import REVENUE_FIELD from "@salesforce/schema/Account.AnnualRevenue";
 import INDUSTRY_FIELD from "@salesforce/schema/Account.Industry";
@@ -15,6 +14,7 @@ const columns = [
 export default class Re_team extends NavigationMixin(LightningElement) {
     data = [];
     columns = columns;
+    show = true
     @api objectApiName = "Account";
 
     fields = [NAME_FIELD, REVENUE_FIELD, INDUSTRY_FIELD];
@@ -31,6 +31,9 @@ export default class Re_team extends NavigationMixin(LightningElement) {
     get() {
         console.log("teams:::", this.teams);
     }
+    check() {
+        this.show = !this.show
+    }
     handleSuccess(event) {
         const evt = new ShowToastEvent({
             title: "Account created",
@@ -40,8 +43,7 @@ export default class Re_team extends NavigationMixin(LightningElement) {
         this.dispatchEvent(evt);
     }
     connectedCallback() {
-        const data = generateData({ amountOfRecords: 100 });
-        this.data = data;
+
     }
 
     handleNewTeam() {
