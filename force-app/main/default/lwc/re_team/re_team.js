@@ -50,6 +50,9 @@ export default class Re_team  extends NavigationMixin(LightningElement) {
             attributes: {
               objectApiName: "Team__c",
               actionName: "new",
+            },
+            state : {
+                navigationLocation: 'RELATED_LIST'
             }
           });
     }
