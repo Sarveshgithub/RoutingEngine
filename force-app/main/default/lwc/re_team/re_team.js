@@ -12,7 +12,16 @@ const columns = [
         }
     },
     { label: "Active", fieldName: "Active__c", type: "checkbox" },
-    { label: "Object", fieldName: "Object__c" }
+    { label: "Object", fieldName: "Object__c" },
+    {
+        type: "button",
+        fixedWidth: 150,
+        typeAttributes: {
+            label: 'Edit',
+            name: 'edit',
+            variant: 'brand'
+        }
+    },
 ];
 
 export default class Re_team extends NavigationMixin(LightningElement) {
