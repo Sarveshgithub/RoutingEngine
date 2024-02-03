@@ -27,7 +27,7 @@
     "eslint-plugin-jest": "^26.1.2",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
-    "prettier": "2.8.8",
+    "prettier": "^2.8.8",
     "prettier-plugin-apex": "1.13.0"
   },
   "lint-staged": {
@@ -37,5 +37,9 @@
     "**/{aura,lwc}/**": [
       "eslint"
     ]
+  },
+  "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^10.2.5"
   }
 }
