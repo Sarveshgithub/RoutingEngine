@@ -5,7 +5,7 @@
         onclick={check}
     ></lightning-button>
     <template if:false={show}>
-        <c-re_team-detail> </c-re_team-detail>
+        <c-re_team-detail team={team}> </c-re_team-detail>
     </template>
     <lightning-card title="Team" if:true={show}>
         <lightning-button

@@ -1,63 +1,33 @@
 <template>
     <lightning-card>
         <h3 class="slds-text-heading_medium">
-            <lightning-icon
-                icon-name="custom:custom21"
-                size="small"
-            ></lightning-icon>
-            <strong style="color: #270086; font-size: 13px">
-                Create Vertical Navigation in Lightning Web Component (LWC)
-            </strong>
+            <lightning-icon icon-name="custom:custom21" size="small"></lightning-icon>
+            <strong style="color: #270086; font-size: 13px"> Create Vertical Navigation in Lightning Web Component (LWC) </strong>
         </h3>
         <br />
         <lightning-layout>
             <lightning-layout-item>
-                <lightning-vertical-navigation
-                    selected-item={selectedItem}
-                    onselect={changeHandleAction}
-                    class="navigation"
-                >
+                <lightning-vertical-navigation selected-item={selectedItem} onselect={changeHandleAction} class="navigation">
                     <lightning-vertical-navigation-section label="Vertical">
-                        <lightning-vertical-navigation-item
-                            label="Team"
-                            name="team"
-                        ></lightning-vertical-navigation-item>
-                        <lightning-vertical-navigation-item
-                            label="Team Member"
-                            name="member"
-                        ></lightning-vertical-navigation-item>
-                        <lightning-vertical-navigation-item
-                            label="Capacity"
-                            name="visualforce"
-                        ></lightning-vertical-navigation-item>
-                        <lightning-vertical-navigation-item
-                            label="Trigger"
-                            name="trigger"
-                        ></lightning-vertical-navigation-item>
-                        <lightning-vertical-navigation-item
-                            label="Jquery/Javascript"
-                            name="jqueryJavascript"
-                        ></lightning-vertical-navigation-item>
-                        <lightning-vertical-navigation-item
-                            label="Salesforce LWC"
-                            name="salesforceLwc"
-                        ></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Team" name="team"></lightning-vertical-navigation-item>
+                        <lightning-vertical-navigation-item label="Team Member" name="member"></lightning-vertical-navigation-item>
                     </lightning-vertical-navigation-section>
                 </lightning-vertical-navigation>
             </lightning-layout-item>
 
             <lightning-layout-item padding="around-medium">
-                <h2
-                    class="slds-section-title--divider"
-                    style="background: #eee; margin-bottom: 10px"
-                >
-                    <strong
-                        >You Are Viewing:
-                        <span style="color: #0000ff"
-                            >{currentContent}</span
-                        ></strong
+                <lightning-card title={currentContent}>
+                    <lightning-button label="New" slot="actions"></lightning-button>
+                    <lightning-datatable
+                        if:true={temaMemmber}
+                        key-field="id"
+                        data={temaMemmber}
+                        columns={columns}
+                        hide-checkbox-column="true"
                     >
-                </h2>
+                    </lightning-datatable>
+                    <p slot="footer">Card Footer</p>
+                </lightning-card>
             </lightning-layout-item>
         </lightning-layout>
     </lightning-card>

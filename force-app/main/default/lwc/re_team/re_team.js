@@ -28,6 +28,7 @@ export default class Re_team extends NavigationMixin(LightningElement) {
     data = [];
     columns = columns;
     show = true
+    team;
 
     @wire(fetchTeams)
     wiredMyData({ error, data }) {
@@ -64,7 +65,8 @@ export default class Re_team extends NavigationMixin(LightningElement) {
     callRowAction(event) {
         const selectedValue = event.detail;
         const actionName = event.detail.action.name;
-        console.log('event>>', event, selectedValue, actionName)
+        console.log('event>>', event, selectedValue.row, actionName)
+        this.team = selectedValue.row;
         if (actionName === "ActionName") {
             // init your modal here
             this.openModal = true;
