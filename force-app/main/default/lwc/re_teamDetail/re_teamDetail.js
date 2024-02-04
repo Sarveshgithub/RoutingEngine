@@ -46,7 +46,7 @@ export default class Re_teamDetail extends LightningElement {
 
     fetchTeamMember(){
         fetchTeamMemeber({
-            teamId : 'a005h00000wYIIsAAO'
+            teamId : this.team.Id
         }).then(res =>{
             if(res){
                 console.log('res:::',res,this.team);

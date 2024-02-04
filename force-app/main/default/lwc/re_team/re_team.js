@@ -67,6 +67,7 @@ export default class Re_team extends NavigationMixin(LightningElement) {
         const actionName = event.detail.action.name;
         console.log('event>>', event, selectedValue.row, actionName)
         this.team = selectedValue.row;
+        this.show = false
         if (actionName === "ActionName") {
             // init your modal here
             this.openModal = true;
