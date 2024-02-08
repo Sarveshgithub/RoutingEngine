@@ -50,6 +50,7 @@ export default class Re_teamDetail extends LightningElement {
         }).then(res =>{
             if(res){
                 console.log('res:::',res,this.team);
+                res['Name'] = res['Resource__r']['Name']
                 this.temaMemmber = res
                 console.log('temaMemmber:::',this.temaMemmber);
             }
