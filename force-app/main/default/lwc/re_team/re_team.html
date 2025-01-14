@@ -14,7 +14,6 @@
             variant="brand"
             onclick={handleNewTeam}
         ></lightning-button>
-        <div style="height: 300px"> 
             <lightning-datatable
                 key-field="id"
                 data={data}
@@ -23,6 +22,5 @@
                 onrowaction={callRowAction}
             >
             </lightning-datatable>
-        </div>
     </lightning-card>
 </template>
